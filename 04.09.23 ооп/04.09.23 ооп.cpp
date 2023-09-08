@@ -1,10 +1,10 @@
-﻿// ConsoleApplication1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// ConsoleApplication1.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
 using namespace std;
 
-//дз 
+//дз 1
 //перечитати презентацію до 12го слайду
 //написати 5 класів (5 полей, 5 методів) (котик то один клас) :
 // 1 людина 
@@ -12,6 +12,16 @@ using namespace std;
 // 3 телефон мобільний
 // 4 на вибір
 // 5 на вибір
+
+struct DateTime {
+	short day;
+	int month;
+	int year;
+	int hours;
+	int mins;
+	int secs;
+	string weekday = "Wednesday";
+};
 
 class Cat { //робимо котика
 public:
@@ -48,20 +58,26 @@ public:
 	//поведінка (методи класу, функції класу)
 
 	void speaking() {
-		cout << name <<" "<< last_name <<" is talking!\n";
+		cout << name << " " << last_name << " is talking!\n";
 	}
-	void eating(){
+	void eating() {
 		cout << name << " " << last_name << " is eating!\n";
 	}
-	void dancing(){
+	void dancing() {
 		cout << name << " " << last_name << " is dancing!\n";
 	}
-		void washing(){
-			cout << name << " " << last_name << " is in a shower!\n";
+	void washing() {
+		cout << name << " " << last_name << " is in a shower!\n";
 	}
-		void resting() {
-			cout << name << " " << last_name << " is resting!\n";
-		}
+	void resting() {
+		cout << name << " " << last_name << " is resting!\n";
+	}
+	void callSomeone() {
+		cout << "'Hi! " << name << " " << last_name << " is here!'\n";
+	}
+	void work() {
+		cout << name << " " << last_name << " is working here!\n";
+	}
 };
 
 class Room {
@@ -74,11 +90,13 @@ public:
 	int window_amount = 2;
 
 	//поведінка (методи класу, функції класу)
-	void roomPainting() {
+	void roomPainting(Human who) {
 		cout << "room is being painted!\n";
+		who.work();
 	}
-	void roomUsing() {
+	void roomUsing(Human& who) {
 		cout << "room is being used!\n";
+		who.dancing();
 	}
 	void talking() {
 		cout << "room is not talking!\n";
@@ -101,8 +119,9 @@ public:
 	double mobilePrice = 20000;
 
 	//поведінка (методи класу, функції класу)
-	void ringing() {
-		cout << "mobile is ringing\n";
+	void ringing(Human& who) {
+		cout << "mobile is ringing!:\n";
+		who.callSomeone();
 	}
 	void charge() {
 		cout << "mobile is charging\n";
@@ -118,6 +137,37 @@ public:
 	}
 };
 
+class Kid {
+public:
+	//властивості (поля класу,змінні классу)
+	string name = "Carl";
+	string hairColor = "black";
+	string eyesColor = "blue";
+	double height = 1.45;
+	int age = 10;
+
+	//поведінка (методи класу, функції класу)
+	void fun() {
+		cout << name << " is having fun\n";
+	}
+	void game(Cat who) {
+		cout << name << " is playing with a cat!\n";
+		who.makeNoise();
+	}
+	void cry() {
+		cout << name << " is crying\n";
+	}
+	void run() {
+		cout << name << " is running\n";
+	}
+	void learn() {
+		cout << name << " is learning\n";
+	}
+	void wear() {
+		cout << "'I'm wearing a hat to be protected!'\n";
+	}
+};
+
 class Hat {
 public:
 	//властивості (поля класу,змінні классу)
@@ -128,8 +178,9 @@ public:
 	string material = "cotton";
 
 	//поведінка (методи класу, функції класу)
-	void protection() {
+	void protection(Kid& who) {
 		cout << "hat is protecting from the sun\n";
+		who.wear();
 	}
 	void cold() {
 		cout << "hat is protecting from cold\n";
@@ -146,37 +197,33 @@ public:
 
 };
 
-class Kid {
-public:
-	//властивості (поля класу,змінні классу)
-	string name = "Carl";
-	string hairColor = "black";
-	string eyesColor = "blue";
-	double height = 1.45;
-	int age = 10;
-
-	//поведінка (методи класу, функції класу)
-	void fun() {
-		cout << name << " is having fun\n";
-	}
-	void game() {
-		cout << name << " is playing a game\n";
-	}
-	void cry() {
-		cout << name << " is crying\n";
-	}
-	void run() {
-		cout << name << " is running\n";
-	}
-	void learn() {
-		cout << name << " is learning\n";
-	}
-};
-
-
 
 int main()
 {
+	Human h, h1, h2;
+	MobilePhone ph;
+	Hat hat;
+	Kid k;
+	Room r;
+	Cat c;
+
+	h1.name = "Max";
+	h2.name = "Mark";
+
+	cout << "1) ";
+	ph.ringing(h);
+
+	cout << "\n2) ";
+	hat.protection(k);
+
+	cout << "\n3) ";
+	r.roomUsing(h1);
+
+	cout << "\n4) ";
+	k.game(c);
+
+	cout << "\n5) ";
+	r.roomPainting(h);
 
 }
 
