@@ -50,14 +50,14 @@ public:
 	void walk() {
 		if (nPows <= 2) {
 			cout << "Cat doesn't have enough legs to walk!\n";
-				return;
+			return;
 		}
-		else if(energyLevel<20){
+		else if (energyLevel < 20) {
 			cout << "Cat is tired!\n";
 			return;
 		}
-			cout << "Cat walks!\n";
-			energyLevel -= 20;
+		cout << "Cat walks!\n";
+		energyLevel -= 20;
 	}
 	void eat() {
 		if (hungerLevel > 80) {
@@ -67,29 +67,128 @@ public:
 		cout << "Cat eats " << endl;
 		hungerLevel += 30;
 	}
-void printCat() {
-	cout << "Cat changes: \n";
-	cout << "Energy: " <<energyLevel << endl;
-	cout << "Hunger: " <<hungerLevel << endl;
-}
+	void printCat() {
+		cout << "Cat changes: \n";
+		cout << "Energy: " << energyLevel << endl;
+		cout << "Hunger: " << hungerLevel << endl;
+	}
 };
 
 class Human {
-public:
+private:
 	//властивості (поля класу,змінні классу)
-	double height = 1.80;
-	double weight = 72.3;
-	string eyes_color = "brown";
-	string name = "Megan";
-	string last_name = "Smith";
+	double height;
+	string eyes_color;
+	string name;
+	string last_name;
 	int energy;
 	bool soreThroat;
 	int cleanliness;
 	int mood;
 	int hunger;// 0 - full; 100 - hungry;
 
+public:
+	void SetHeight(double a) {
+		if (a < 0 || a>300) {
+			cout << "Wrong input!\n";
+		}
+		else {
+			height = a;
+		}
+	}
+
+	double GetHeight() const {
+		return height;
+	}
+
+	void SetEyes_color(string a) {
+		eyes_color = a;
+	}
+
+	string GetEyes_color() const {
+		return eyes_color;
+	}
+
+	void SetName(string a) {
+		name = a;
+	}
+
+	string GetName() const {
+		return name;
+	}
+
+	void SetLastName(string a) {
+		last_name = a;
+	}
+
+	string GetLastName() const {
+		return last_name;
+	}
+
+	void SetEnergy(int a) {
+		if (a < 0 || a>100) {
+			cout << "Wrong input!\n";
+		}
+		else {
+			energy = a;
+		}
+	}
+
+	int GetEnergy() const {
+		return energy;
+	}
+
+	void SetSoreThroat(bool a) {
+		soreThroat = a;
+	}
+
+	bool GetSoreThroat() const {
+		return soreThroat;
+	}
+
+	void SetCleanliness(int a) {
+		if (a < 0 || a>100) {
+			cout << "Wrong input!\n";
+		}
+		else {
+			cleanliness = a;
+		}
+	}
+
+	int GetCleanliness() const {
+		return cleanliness;
+	}
+
+	void SetMood(int a) {
+		if (a < 0 || a>100) {
+			cout << "Wrong input!\n";
+		}
+		else {
+			mood = a;
+		}
+	}
+
+	int GetMood() const {
+		return mood;
+	}
+
+	void SetHunger(int a) {
+		if (a < 0 || a>100) {
+			cout << "Wrong input!\n";
+		}
+		else {
+			hunger = a;
+		}
+	}
+
+	int SetHunger() const {
+		return hunger;
+	}
+	
+
 	//поведінка (методи класу, функції класу)
 
+public:
 	void speaking() {
 		if (soreThroat) {
 			cout << name << " has a sore throat! " << name << " can't speak!\n";
@@ -100,16 +199,16 @@ public:
 	}
 	void eating() {
 		if (hunger > 80) {
-			cout << name <<" is full!\n";
+			cout << name << " is full!\n";
 			return;
 		}
 		cout << name << " " << last_name << " is eating!\n";
-		hunger +=30;
+		hunger += 30;
 	}
 	void dancing() {
 		if (energy < 30) {
 			cout << name << " is tired!\n";
-				return;
+			return;
 		}
 		cout << name << " " << last_name << " is dancing!\n";
 		energy -= 30;
@@ -117,12 +216,12 @@ public:
 		cleanliness -= 20;
 	}
 	void washing() {
-		if (cleanliness>50) {
+		if (cleanliness > 50) {
 			cout << name << " is clean!\n";
-      return;
+			return;
 		}
 		cout << name << " " << last_name << " is in a shower!\n";
-		cleanliness +=50;
+		cleanliness += 50;
 		mood += 10;
 	}
 	void resting() {
@@ -153,30 +252,127 @@ public:
 		hunger -= 30;
 	}
 
-void printHuman() {
-	cout << "Human changes: \n";
-	cout <<"Energy: "<< energy << endl;
-	cout <<"Hunger: " << hunger << endl;
-	cout <<"Mood: " << mood << endl;
-	cout <<"cleanliness: " << cleanliness << endl;
-}
+	void printHuman() {
+		cout << "Human changes: \n";
+		cout << "Energy: " << energy << endl;
+		cout << "Hunger: " << hunger << endl;
+		cout << "Mood: " << mood << endl;
+		cout << "cleanliness: " << cleanliness << endl;
+	}
 };
 
 class Room {
-public:
+private:
 	//властивості (поля класу,змінні классу)
-	double width = 3.5;
-	double height = 2.3;
-	double lenghth = 4.6;
-	string wall_color = "blue";
-	int window_amount = 2;
+	double width;
+	double height;
+	double lenghth;
+	string wall_color;
+	int window_amount;
 	bool wallPainted;
 	int roomAiring;
 	int roomCleanliness;
 	bool roomDecor;
-  int canTalk;
+	bool canTalk;
+
+public:
+ void setWidth(double a){
+   if(a>0)
+   width=a;
+   else
+    cout<<"Wrong input!";
+ }
+
+double getWidth() const {
+  return width;
+}
+void setHeight(double a) {
+  if(a>0)
+    height=a;
+  else
+    cout<<"Wrong input!";
+}
+double getHeight() const {
+  return lenghth;
+}
+void setLength(double a) {
+  if(a>0)
+    lenghth=a;
+  else
+    cout<<"Wrong input!";
+}
+
+double getLength() const {
+  return lenghth;
+}
+
+void setWallColor(string a) {
+  wall_color=a;
+}
+
+string getWallColor()const {
+  return wall_color;
+}
+
+void setWindow_amount(int a) {
+  if(a>0)
+    window_amount=a;
+  else
+    cout<<"Wrong input!";
+}
+
+int getWindow_amount() const {
+  return window_amount;
+}
+
+void setWallPainted (bool a) {
+		wallPainted = a;
+	}
+
+	bool getWallPainted() const {
+		return wallPainted;
+	}
+
+void setRoomAiring(int a) {
+  if(a>=0||a<=100)
+    roomAiring=a;
+  else
+    cout<<"Wrong input!";
+}
+
+int getRoomAiring() const {
+  return roomAiring;
+}
+
+void setRoomClean(int a) {
+  if(a>=0||a<=100)
+    roomCleanliness=a;
+  else
+    cout<<"Wrong input!";
+}
+
+int getRoomClean() const {
+  return roomCleanliness;
+}
+
+void setRoomDecor (bool a) {
+		roomDecor = a;
+	}
+
+	bool getRoomDecor() const {
+		return roomDecor;
+	}
+
+void setCanTalk (bool a) {
+		canTalk = a;
+	}
+
+	bool getCanTalk() const {
+		return canTalk;
+	}
 
 	//поведінка (методи класу, функції класу)
+public:
 	void roomPainting(Human who) {
 		if (wallPainted) {
 			cout << "Room walls are already painted!\n";
@@ -207,7 +403,7 @@ public:
 		roomAiring -= 10;
 	}
 	void roomCleaning() {
-		if (roomCleanliness >60) {
+		if (roomCleanliness > 60) {
 			cout << "Room is clean!\n";
 			return;
 		}
@@ -224,38 +420,107 @@ public:
 		roomCleanliness -= 40;
 	}
 
-void printRoom() {
-	cout << "Room changes: \n";
-	cout << "Room airing: " << roomAiring << endl;
-	cout << "roomCleanliness: " << roomCleanliness << endl;
-	if (wallPainted) {
-		cout << "walls are painted!\n";
+	void printRoom() {
+		cout << "Room changes: \n";
+		cout << "Room airing: " << roomAiring << endl;
+		cout << "roomCleanliness: " << roomCleanliness << endl;
+		if (wallPainted) {
+			cout << "walls are painted!\n";
+		}
+		else {
+			cout << "walls are not painted!";
+		}
+		if (roomDecor) {
+			cout << "Room is decored!\n";
+		}
+		else {
+			cout << "Room is not decored!";
+		}
 	}
-	else {
-		cout << "walls are not painted!";
-	}
-	if (roomDecor) {
-		cout << "Room is decored!\n";
-	}
-	else {
-		cout << "Room is not decored!";
-	}
-}
 
 };
 
 class MobilePhone {
-public:
+private:
 	//властивості (поля класу,змінні классу)
-	string mobileModel = "Iphone";
-	double mobileLenght = 10.5;
-	double mobileWidth = 4.5;
-	string mobileColor = "white";
-	double mobilePrice = 20000;
+	string mobileModel;
+	double mobileLenght;
+	double mobileWidth;
+	string mobileColor;
+	double mobilePrice;
 	int chargeLevel;
 	bool isNew;
 
+public:
+void setMobileModel(string a) {
+  mobileModel=a;
+}
+
+string getMobileModel()const {
+  return mobileModel;
+}
+
+void setMobileLenght(double a) {
+  if(a>0)
+    mobileLenght=a;
+  else
+    cout<<"Wrong input!";
+}
+
+double getMobileLenght() const {
+  return mobileLenght;
+}
+void setMobileWidth(double a) {
+  if(a>0)
+    mobileWidth=a;
+  else
+    cout<<"Wrong input!";
+}
+
+double getMobileWidth() const {
+  return mobileWidth;
+}
+
+void setMobileColor(string a) {
+  mobileColor=a;
+}
+
+string getMobileColor()const {
+  return mobileColor;
+}
+
+void setMobilePrice(double a) {
+  if(a>0)
+    mobilePrice=a;
+  else
+    cout<<"Wrong input!";
+}
+
+double getMobilePrice() const {
+  return mobilePrice;
+}
+
+void setChargeLevel(int a) {
+  if(a>=0||a<=100)
+    chargeLevel=a;
+  else
+    cout<<"Wrong input!";
+}
+
+int getChargeLevel() const {
+  return chargeLevel;
+}
+
+void setIsNew (bool a) {
+		isNew = a;
+	}
+
+	bool getIsNew() const {
+		return isNew;
+	}
+
 	//поведінка (методи класу, функції класу)
+public:
 	void ringing(Human& who) {
 		if (chargeLevel == 0) {
 			cout << "Phone is dead!\n";
@@ -298,25 +563,87 @@ public:
 		chargeLevel -= 30;
 	}
 
-void printPhone() {
-	cout << "Phone changes: \n";
-	cout << "Phone charging lvl: " << chargeLevel << endl;
-}
+	void printPhone() {
+		cout << "Phone changes: \n";
+		cout << "Phone charging lvl: " << chargeLevel << endl;
+	}
 };
 
 class Kid {
-public:
+private:
 	//властивості (поля класу,змінні классу)
-	string name = "Carl";
-	string hairColor = "black";
-	string eyesColor = "blue";
-	double height = 1.45;
-	int age = 10;
+	string name;
+	string hairColor;
+	string eyesColor;
+	int age;
 	int goodMood;
 	int energyLvl;
 	int haveHat;
 
+public:
+void setName(string a) {
+  name=a;
+}
+
+string getName()const {
+  return name;
+}
+void setHairColor(string a) {
+  hairColor=a;
+}
+
+string getHairColor()const {
+  return hairColor;
+}
+void setEyesColor(string a) {
+  eyesColor=a;
+}
+string getEyesColor()const {
+  return eyesColor;
+}
+void setAge(int a) {
+  if(a>=0||a<=100)
+    age=a;
+  else
+    cout<<"Wrong input!";
+}
+
+int getAge() const {
+  return age;
+}
+void setGoodMood(int a) {
+  if(a>=0||a<=100)
+    goodMood=a;
+  else
+    cout<<"Wrong input!";
+}
+
+int getChargeLevel() const {
+  return goodMood;
+}
+void setEnergyLvl(int a) {
+  if(a>=0||a<=100)
+    energyLvl=a;
+  else
+    cout<<"Wrong input!";
+}
+
+int getEnergyLvl() const {
+  return energyLvl;
+}
+void setHaveHat(int a) {
+  if(a>=0||a<=100)
+    haveHat=a;
+  else
+    cout<<"Wrong input!";
+}
+
+int getHaveHat() const {
+  return haveHat;
+}
+
 	//поведінка (методи класу, функції класу)
+public:
 	void fun() {
 		if (energyLvl < 30) {
 			cout << name << " is too tired to have fun!\n";
@@ -372,28 +699,92 @@ public:
 		goodMood += 10;
 	}
 
-void printKid() {
-	cout << "Kid changes: \n";
-	cout << "good mood lvl: " << goodMood << endl;
-	cout << "Energy level: " << energyLvl << endl;
-}
+	void printKid() {
+		cout << "Kid changes: \n";
+		cout << "good mood lvl: " << goodMood << endl;
+		cout << "Energy level: " << energyLvl << endl;
+	}
 };
 
 class Hat {
-public:
+private:
 	//властивості (поля класу,змінні классу)
-	string color = "red";
-	string size = "M";
-	double lenght = 15.5;
-	double height = 10.4;
-	string material = "cotton";
+	string color;
+	double lenght;
+	string material;
 	bool winterHat;
 	bool summerHat;
 	bool waterHat;
 	int dirtness;
 	bool sewed;
 
+public:
+
+void setColor(string a) {
+  color=a;
+}
+string getColor()const {
+  return color;
+}
+
+void setLenght(double a) {
+  if(a>0)
+    lenght=a;
+  else
+    cout<<"Wrong input!";
+}
+
+double getLenght() const {
+  return lenght;
+}
+
+void setMaterial(string a) {
+  material=a;
+}
+string getMaterial()const {
+  return material;
+}
+
+void setIswinterHat (bool a) {
+		winterHat = a;
+	}
+
+	bool getIswinterHat() const {
+		return winterHat;
+	}
+void setIssummerHat (bool a) {
+		summerHat = a;
+	}
+
+	bool getIssummerHat() const {
+		return summerHat;
+	}
+void setIswaterHat (bool a) {
+		waterHat = a;
+	}
+
+	bool getIswaterHat() const {
+		return waterHat;
+	}
+void setIssewed (bool a) {
+		sewed = a;
+	}
+
+	bool getIssewed() const {
+		return sewed;
+	}
+void setDirtness(int a) {
+  if(a>=0||a<=100)
+    dirtness=a;
+  else
+    cout<<"Wrong input!";
+}
+
+int getDirtness() const {
+  return dirtness;
+}
 	//поведінка (методи класу, функції класу)
+public:
 	void protection(Kid& who) {
 		if (!summerHat) {
 			cout << "This hat cant protect from the sun!\n";
@@ -425,7 +816,7 @@ public:
 			return;
 		}
 		cout << "hat is being sewed\n";
-		sewed =true;
+		sewed = true;
 	}
 	void washing() {
 		if (dirtness > 50) {
@@ -436,10 +827,10 @@ public:
 		dirtness += 50;
 	}
 
-void printHat() {
-	cout << "Hat changes: \n";
-	cout << "Hat dirtness: " << dirtness << endl;
-}
+	void printHat() {
+		cout << "Hat changes: \n";
+		cout << "Hat dirtness: " << dirtness << endl;
+	}
 };
 
 
@@ -451,9 +842,12 @@ int main()
 	Kid k;
 	Room r;
 	Cat c;
+  int a;
+  double ad;
+  string as;
 
-	h1.name = "Max";
-	h2.name = "Mark";
+	// h1.name = "Max";
+	// h2.name = "Mark";
 
 	// cout << "1) ";
 	// ph.ringing(h);
@@ -477,7 +871,7 @@ int main()
 	c.hungerLevel = 100;
 	c.muteness = false;
 
-  c.printCat();
+	c.printCat();
 	c.makeNoise();
 	c.walk();
 	c.eat();
@@ -488,35 +882,40 @@ int main()
 	c.hungerLevel = 10;
 	c.muteness = true;
 
-  c.printCat();
+	c.printCat();
 	c.makeNoise();
 	c.walk();
 	c.eat();
-  c.printCat();
+	c.printCat();
 
-	human.energy = 100;
-	human.soreThroat = false;
-	human.cleanliness = 10;
-	human.mood = 100;
-	human.hunger = 100;
+  ad=180;
+	human.SetHeight(ad);
 
-  human.printHuman();
-	human.speaking();
-	human.eating();
-	human.dancing();
-	human.washing();
-	human.resting();
-	human.callSomeone();
-  human.work();
+  as="brown";
+  human.SetEyes_color(as);
+
+  as="Max";
+  human.SetName(as);
+
+  as="Smith";
+  human.SetLastName(as);
+
+  a=100;
+  human.SetEnergy(a);
+
+  a=1;
+	human.SetSoreThroat(a);
+  
+  a=100;
+	human.SetCleanliness(a);
+
+  a = 10;
+	human.SetHunger(a);
+
+  a=100;
+  human.SetMood(a);
+  
 	human.printHuman();
-
-	human.energy = 10;
-	human.soreThroat = true;
-	human.cleanliness = 100;
-	human.mood = 10;
-	human.hunger = 10;
-
-  human.printHuman();
 	human.speaking();
 	human.eating();
 	human.dancing();
@@ -526,13 +925,52 @@ int main()
 	human.work();
 	human.printHuman();
 
-	r.wallPainted = false;
-	r.roomAiring = 100;
-	r.roomCleanliness = 10;
-	r.roomDecor = false;
-	r.canTalk = 0;
+  a=10;
+  human.SetEnergy(a);
 
-  r.printRoom();
+  a=0;
+	human.SetSoreThroat(a);
+  
+  a=100;
+	human.SetCleanliness(a);
+
+  a = 10;
+	human.SetHunger(a);
+
+  a=10;
+  human.SetMood(a);
+
+	human.printHuman();
+	human.speaking();
+	human.eating();
+	human.dancing();
+	human.washing();
+	human.resting();
+	human.callSomeone();
+	human.work();
+	human.printHuman();
+
+  ad=3.5;
+  r.setWidth(ad);
+  ad=2.3;
+  r.setHeight(ad);
+  ad=4.6;
+  r.setLength(ad);
+  as="blue";
+  r.setWallColor(as);
+  a=2;
+  r.setWindow_amount(a);
+  a=0;
+	r.setWallPainted(a);
+  a=100;
+	r.setRoomAiring(a);
+  a=10;
+	r.setRoomClean(a);
+  a=0;
+	r.setRoomDecor(a);
+	r.setCanTalk(a);
+
+	r.printRoom();
 	r.roomPainting(h1);
 	r.roomUsing(h1);
 	r.talking();
@@ -540,13 +978,17 @@ int main()
 	r.roomDecorating();
 	r.printRoom();
 
-	r.wallPainted = true;
-	r.roomAiring = 10;
-	r.roomCleanliness = 100;
-	r.roomDecor = true;
-	r.canTalk = 1;
+	a=1;
+	r.setWallPainted(a);
+  a=10;
+	r.setRoomAiring(a);
+  a=100;
+	r.setRoomClean(a);
+  a=1;
+	r.setRoomDecor(a);
+	r.setCanTalk(a);
 
-  r.printRoom();
+	r.printRoom();
 	r.roomPainting(h1);
 	r.roomUsing(h1);
 	r.talking();
@@ -554,10 +996,22 @@ int main()
 	r.roomDecorating();
 	r.printRoom();
 
-	ph.chargeLevel = 100;
-	ph.isNew = false;
+  as="Iphone";
+  ph.setMobileModel(as);
+  ad=10.5;
+  ph.setMobileLenght(ad);
+  ad=4.5;
+  ph.setMobileWidth(ad);
+  as = "white";
+  ph.setMobileColor(as);
+  ad = 20000;
+  ph.setMobilePrice(ad);
+  a=100;
+	ph.setChargeLevel(a);
+  a=0;
+	ph.setIsNew(a);
 
-  ph.printPhone();
+	ph.printPhone();
 	ph.ringing(h1);
 	ph.charge();
 	ph.music();
@@ -565,10 +1019,12 @@ int main()
 	ph.video();
 	ph.printPhone();
 
-	ph.chargeLevel = 10;
-	ph.isNew = true;
+	a=10;
+	ph.setChargeLevel(a);
+  a=1;
+	ph.setIsNew(a);
 
-  ph.printPhone();
+	ph.printPhone();
 	ph.ringing(h1);
 	ph.charge();
 	ph.music();
@@ -576,10 +1032,21 @@ int main()
 	ph.video();
 	ph.printPhone();
 
-	k.goodMood = 100;
-	k.energyLvl = 100;
+  as = "Carl";
+  k.setName(as);
+  as = "black";
+  k.setHairColor(as);
+  as = "blue";
+  k.setEyesColor(as);
+  a=10;
+  k.setAge(a);
+  a=100;
+  k.setGoodMood(a);
+  k.setEnergyLvl(a);
+  a=1;
+  k.setHaveHat(a);
 
-  k.printKid();
+	k.printKid();
 	k.fun();
 	k.game(c);
 	k.cry();
@@ -588,10 +1055,12 @@ int main()
 	k.wear();
 	k.printKid();
 
-	k.goodMood = 10;
-	k.energyLvl = 10;
+  k.setGoodMood(a);
+  k.setEnergyLvl(a);
+  a=0;
+  k.setHaveHat(a);
 
-  k.printKid();
+	k.printKid();
 	k.fun();
 	k.game(c);
 	k.cry();
@@ -600,13 +1069,31 @@ int main()
 	k.wear();
 	k.printKid();
 
-	hat.winterHat = true;
-	hat.summerHat = true;
-	hat.waterHat = true;
-	hat.sewed = false;
-	hat.dirtness = 100;
+  /*string color = "red";
+	double lenght = 15.5;
+	string material = "cotton";
+	bool winterHat;
+	bool summerHat;
+	bool waterHat;
+	int dirtness;
+	bool sewed;*/
 
-  hat.printHat();
+  as = "red";
+  hat.setColor(as);
+  ad=15.5;
+  hat.setLenght(ad);
+  as = "cotton";
+  hat.setMaterial(as);
+  a=1;
+  hat.setIswinterHat(a);
+  hat.setIssummerHat(a);
+  hat.setIswaterHat(a);
+  a=0;
+  hat.setIssewed(a);
+  a=100;
+  hat.setDirtness(a);
+
+	hat.printHat();
 	hat.protection(k);
 	hat.cold();
 	hat.water();
@@ -614,13 +1101,16 @@ int main()
 	hat.washing();
 	hat.printHat();
 
-	hat.winterHat = false;
-	hat.summerHat = false;
-	hat.waterHat = false;
-	hat.sewed = true;
-	hat.dirtness = 10;
+	a=0;
+  hat.setIswinterHat(a);
+  hat.setIssummerHat(a);
+  hat.setIswaterHat(a);
+  a=1;
+  hat.setIssewed(a);
+  a=10;
+  hat.setDirtness(a);
 
-  hat.printHat();
+	hat.printHat();
 	hat.protection(k);
 	hat.cold();
 	hat.water();
