@@ -88,101 +88,101 @@ private:
 	int hunger;// 0 - full; 100 - hungry;
 
 public:
-	void SetHeight(double a) {
-		if (a < 0 || a>300) {
+	void SetHeight(double height) {
+		if (height < 0 || height>300) {
 			cout << "Wrong input!\n";
 		}
 		else {
-			height = a;
+			this->height = height;
 		}
 	}
 
 	double GetHeight() const {
-		return height;
+		return this->height;
 	}
 
-	void SetEyes_color(string a) {
-		eyes_color = a;
+	void SetEyes_color(string eyes_color) {
+		this->eyes_color = eyes_color;
 	}
 
 	string GetEyes_color() const {
-		return eyes_color;
+		return this->eyes_color;
 	}
 
-	void SetName(string a) {
-		name = a;
+	void SetName(string name) {
+		this->name = name;
 	}
 
 	string GetName() const {
-		return name;
+		return this->name;
 	}
 
-	void SetLastName(string a) {
-		last_name = a;
+	void SetLastName(string last_name) {
+		this->last_name = last_name;
 	}
 
 	string GetLastName() const {
-		return last_name;
+		return this->last_name;
 	}
 
-	void SetEnergy(int a) {
-		if (a < 0 || a>100) {
+	void SetEnergy(int energy) {
+		if (energy < 0 || energy>100) {
 			cout << "Wrong input!\n";
 		}
 		else {
-			energy = a;
+			this->energy = energy;
 		}
 	}
 
 	int GetEnergy() const {
-		return energy;
+		return this->energy;
 	}
 
-	void SetSoreThroat(bool a) {
-		soreThroat = a;
+	void SetSoreThroat(bool soreThroat) {
+		this->soreThroat = soreThroat;
 	}
 
 	bool GetSoreThroat() const {
-		return soreThroat;
+		return this->soreThroat;
 	}
 
-	void SetCleanliness(int a) {
-		if (a < 0 || a>100) {
+	void SetCleanliness(int cleanliness) {
+		if (cleanliness < 0 || cleanliness>100) {
 			cout << "Wrong input!\n";
 		}
 		else {
-			cleanliness = a;
+			this->cleanliness = cleanliness;
 		}
 	}
 
 	int GetCleanliness() const {
-		return cleanliness;
+		return this->cleanliness;
 	}
 
-	void SetMood(int a) {
-		if (a < 0 || a>100) {
+	void SetMood(int mood) {
+		if (mood < 0 || mood>100) {
 			cout << "Wrong input!\n";
 		}
 		else {
-			mood = a;
+			this->mood = mood;
 		}
 	}
 
 	int GetMood() const {
-		return mood;
+		return this->mood;
 	}
 
-	void SetHunger(int a) {
-		if (a < 0 || a>100) {
+	void SetHunger(int hunger) {
+		if (hunger < 0 || hunger>100) {
 			cout << "Wrong input!\n";
 		}
 		else {
-			hunger = a;
+			this->hunger = hunger;
 		}
 	}
 
 	int SetHunger() const {
-		return hunger;
+		return this->hunger;
 	}
 	
 
@@ -276,99 +276,99 @@ private:
 	bool canTalk;
 
 public:
- void setWidth(double a){
-   if(a>0)
-   width=a;
+ void setWidth(double width){
+   if(width>0)
+   this->width=width;
    else
     cout<<"Wrong input!";
  }
 
 double getWidth() const {
-  return width;
+  return this->width;
 }
-void setHeight(double a) {
-  if(a>0)
-    height=a;
+void setHeight(double height) {
+  if(height>0)
+    this->height=height;
   else
     cout<<"Wrong input!";
 }
 double getHeight() const {
-  return lenghth;
+  return this->height;
 }
-void setLength(double a) {
-  if(a>0)
-    lenghth=a;
+void setLength(double lenghth) {
+  if(lenghth>0)
+    this->lenghth=lenghth;
   else
     cout<<"Wrong input!";
 }
 
 double getLength() const {
-  return lenghth;
+  return this->lenghth;
 }
 
-void setWallColor(string a) {
-  wall_color=a;
+void setWallColor(string wall_color) {
+  this->wall_color=wall_color;
 }
 
 string getWallColor()const {
-  return wall_color;
+  return this->wall_color;
 }
 
-void setWindow_amount(int a) {
-  if(a>0)
-    window_amount=a;
+void setWindow_amount(int window_amount) {
+  if(window_amount>0)
+    this->window_amount=window_amount;
   else
     cout<<"Wrong input!";
 }
 
 int getWindow_amount() const {
-  return window_amount;
+  return this->window_amount;
 }
 
-void setWallPainted (bool a) {
-		wallPainted = a;
+void setWallPainted (bool wallPainted) {
+		this->wallPainted = wallPainted;
 	}
 
 	bool getWallPainted() const {
-		return wallPainted;
+		return this->wallPainted;
 	}
 
-void setRoomAiring(int a) {
-  if(a>=0||a<=100)
-    roomAiring=a;
+void setRoomAiring(int roomAiring) {
+  if(roomAiring>=0||roomAiring<=100)
+    this->roomAiring=roomAiring;
   else
     cout<<"Wrong input!";
 }
 
 int getRoomAiring() const {
-  return roomAiring;
+  return this->roomAiring;
 }
 
-void setRoomClean(int a) {
-  if(a>=0||a<=100)
-    roomCleanliness=a;
+void setRoomClean(int roomCleanliness) {
+  if(roomCleanliness>=0||roomCleanliness<=100)
+    this->roomCleanliness=roomCleanliness;
   else
     cout<<"Wrong input!";
 }
 
 int getRoomClean() const {
-  return roomCleanliness;
+  return this->roomCleanliness;
 }
 
-void setRoomDecor (bool a) {
-		roomDecor = a;
+void setRoomDecor (bool roomDecor) {
+		this->roomDecor = roomDecor;
 	}
 
 	bool getRoomDecor() const {
-		return roomDecor;
+		return this->roomDecor;
 	}
 
-void setCanTalk (bool a) {
-		canTalk = a;
+void setCanTalk (bool canTalk) {
+		this->canTalk = canTalk;
 	}
 
 	bool getCanTalk() const {
-		return canTalk;
+		return this->canTalk;
 	}
 
 	//поведінка (методи класу, функції класу)
@@ -452,71 +452,71 @@ private:
 	bool isNew;
 
 public:
-void setMobileModel(string a) {
-  mobileModel=a;
+void setMobileModel(string mobileModel) {
+  this->mobileModel=mobileModel;
 }
 
 string getMobileModel()const {
-  return mobileModel;
+  return this->mobileModel;
 }
 
-void setMobileLenght(double a) {
-  if(a>0)
-    mobileLenght=a;
+void setMobileLenght(double mobileLenght) {
+  if(mobileLenght>0)
+    this->mobileLenght=mobileLenght;
   else
     cout<<"Wrong input!";
 }
 
 double getMobileLenght() const {
-  return mobileLenght;
+  return this->mobileLenght;
 }
-void setMobileWidth(double a) {
-  if(a>0)
-    mobileWidth=a;
+void setMobileWidth(double mobileLenght) {
+  if(mobileLenght>0)
+    this->mobileWidth=mobileLenght;
   else
     cout<<"Wrong input!";
 }
 
 double getMobileWidth() const {
-  return mobileWidth;
+  return this->mobileWidth;
 }
 
-void setMobileColor(string a) {
-  mobileColor=a;
+void setMobileColor(string mobileColor) {
+  this->mobileColor=mobileColor;
 }
 
 string getMobileColor()const {
-  return mobileColor;
+  return this->mobileColor;
 }
 
-void setMobilePrice(double a) {
-  if(a>0)
-    mobilePrice=a;
+void setMobilePrice(double mobilePrice) {
+  if(mobilePrice>0)
+    this->mobilePrice=mobilePrice;
   else
     cout<<"Wrong input!";
 }
 
 double getMobilePrice() const {
-  return mobilePrice;
+  return this->mobilePrice;
 }
 
-void setChargeLevel(int a) {
-  if(a>=0||a<=100)
-    chargeLevel=a;
+void setChargeLevel(int chargeLevel) {
+  if(chargeLevel>=0||chargeLevel<=100)
+    this->chargeLevel=chargeLevel;
   else
     cout<<"Wrong input!";
 }
 
 int getChargeLevel() const {
-  return chargeLevel;
+  return this->chargeLevel;
 }
 
-void setIsNew (bool a) {
-		isNew = a;
+void setIsNew (bool isNew) {
+		this->isNew = isNew;
 	}
 
 	bool getIsNew() const {
-		return isNew;
+		return this->isNew;
 	}
 
 	//поведінка (методи класу, функції класу)
@@ -581,65 +581,65 @@ private:
 	int haveHat;
 
 public:
-void setName(string a) {
-  name=a;
+void setName(string name) {
+  this->name=name;
 }
 
 string getName()const {
-  return name;
+  return this->name;
 }
-void setHairColor(string a) {
-  hairColor=a;
+void setHairColor(string hairColor) {
+  this->hairColor=hairColor;
 }
 
 string getHairColor()const {
-  return hairColor;
+  return this->hairColor;
 }
-void setEyesColor(string a) {
-  eyesColor=a;
+void setEyesColor(string eyesColor) {
+  this->eyesColor=eyesColor;
 }
 string getEyesColor()const {
-  return eyesColor;
+  return this->eyesColor;
 }
-void setAge(int a) {
-  if(a>=0||a<=100)
-    age=a;
+void setAge(int age) {
+  if(age>=0||age<=100)
+    this->age=age;
   else
     cout<<"Wrong input!";
 }
 
 int getAge() const {
-  return age;
+  return this->age;
 }
-void setGoodMood(int a) {
-  if(a>=0||a<=100)
-    goodMood=a;
+void setGoodMood(int goodMood) {
+  if(goodMood>=0||goodMood<=100)
+    this->goodMood=goodMood;
   else
     cout<<"Wrong input!";
 }
 
 int getChargeLevel() const {
-  return goodMood;
+  return this->goodMood;
 }
-void setEnergyLvl(int a) {
-  if(a>=0||a<=100)
-    energyLvl=a;
+void setEnergyLvl(int energyLvl) {
+  if(energyLvl>=0||energyLvl<=100)
+    this->energyLvl=energyLvl;
   else
     cout<<"Wrong input!";
 }
 
 int getEnergyLvl() const {
-  return energyLvl;
+  return this->energyLvl;
 }
-void setHaveHat(int a) {
-  if(a>=0||a<=100)
-    haveHat=a;
+void setHaveHat(int haveHat) {
+  if(haveHat>=0||haveHat<=100)
+    this->haveHat=haveHat;
   else
     cout<<"Wrong input!";
 }
 
 int getHaveHat() const {
-  return haveHat;
+  return this->haveHat;
 }
 
 	//поведінка (методи класу, функції класу)
@@ -720,68 +720,68 @@ private:
 
 public:
 
-void setColor(string a) {
-  color=a;
+void setColor(string color) {
+  this->color=color;
 }
 string getColor()const {
-  return color;
+  return this->color;
 }
 
-void setLenght(double a) {
-  if(a>0)
-    lenght=a;
+void setLenght(double lenght) {
+  if(lenght>0)
+    this->lenght=lenght;
   else
     cout<<"Wrong input!";
 }
 
 double getLenght() const {
-  return lenght;
+  return this->lenght;
 }
 
-void setMaterial(string a) {
-  material=a;
+void setMaterial(string material) {
+  this->material=material;
 }
 string getMaterial()const {
-  return material;
+  return this->material;
 }
 
-void setIswinterHat (bool a) {
-		winterHat = a;
+void setIswinterHat (bool winterHat) {
+		this->winterHat = winterHat;
 	}
 
 	bool getIswinterHat() const {
-		return winterHat;
+		return this->winterHat;
 	}
-void setIssummerHat (bool a) {
-		summerHat = a;
+void setIssummerHat (bool summerHat) {
+		this->summerHat = summerHat;
 	}
 
 	bool getIssummerHat() const {
-		return summerHat;
+		return this->summerHat;
 	}
-void setIswaterHat (bool a) {
-		waterHat = a;
+void setIswaterHat (bool waterHat) {
+		this->waterHat = waterHat;
 	}
 
 	bool getIswaterHat() const {
-		return waterHat;
+		return this->waterHat;
 	}
-void setIssewed (bool a) {
-		sewed = a;
+void setIssewed (bool sewed) {
+		this->sewed = sewed;
 	}
 
 	bool getIssewed() const {
-		return sewed;
+		return this->sewed;
 	}
-void setDirtness(int a) {
-  if(a>=0||a<=100)
-    dirtness=a;
+void setDirtness(int dirtness) {
+  if(dirtness>=0||dirtness<=100)
+    this->dirtness=dirtness;
   else
     cout<<"Wrong input!";
 }
 
 int getDirtness() const {
-  return dirtness;
+  return this->dirtness;
 }
 	//поведінка (методи класу, функції класу)
 public:
